@@ -1,0 +1,22 @@
+/* Ensure form icons don't overlap text */
+.tm-form-element-icon {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007bff;
+    font-size: 1.2rem;
+    z-index: 10;
+}
+
+.form-control-lg {
+    padding-left: 50px !important; /* Makes room for the icon */
+    height: 60px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.form-group {
+    position: relative; /* Necessary for absolute icon positioning */
+    margin-bottom: 20px;
+}
