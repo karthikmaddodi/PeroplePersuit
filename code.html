@@ -1,331 +1,231 @@
 <!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-background": "#191c1e",
-                    "inverse-on-surface": "#eff1f3",
-                    "secondary-container": "#d5e3fc",
-                    "surface-container": "#eceef0",
-                    "primary": "#002045",
-                    "outline-variant": "#c4c6cf",
-                    "on-error": "#ffffff",
-                    "on-secondary": "#ffffff",
-                    "on-tertiary-fixed-variant": "#5516be",
-                    "on-primary": "#ffffff",
-                    "surface-bright": "#f7f9fb",
-                    "background": "#f7f9fb",
-                    "surface-container-lowest": "#ffffff",
-                    "surface-container-high": "#e6e8ea",
-                    "surface-dim": "#d8dadc",
-                    "inverse-surface": "#2d3133",
-                    "outline": "#74777f",
-                    "on-primary-container": "#86a0cd",
-                    "surface-variant": "#e0e3e5",
-                    "primary-container": "#1a365d",
-                    "on-secondary-container": "#57657a",
-                    "error": "#ba1a1a",
-                    "surface-container-low": "#f2f4f6",
-                    "tertiary": "#290069",
-                    "surface-container-highest": "#e0e3e5",
-                    "secondary-fixed": "#d5e3fc",
-                    "primary-fixed-dim": "#adc7f7",
-                    "inverse-primary": "#adc7f7",
-                    "on-tertiary": "#ffffff",
-                    "primary-fixed": "#d6e3ff",
-                    "tertiary-fixed": "#e9ddff",
-                    "surface": "#f7f9fb",
-                    "on-surface-variant": "#43474e",
-                    "on-secondary-fixed-variant": "#3a485b",
-                    "tertiary-fixed-dim": "#d0bcff",
-                    "secondary-fixed-dim": "#b9c7df",
-                    "on-tertiary-fixed": "#23005c",
-                    "on-tertiary-container": "#ac8bff",
-                    "on-error-container": "#93000a",
-                    "on-surface": "#191c1e",
-                    "on-secondary-fixed": "#0d1c2e",
-                    "surface-tint": "#455f88",
-                    "tertiary-container": "#42009f",
-                    "secondary": "#515f74",
-                    "error-container": "#ffdad6",
-                    "on-primary-fixed-variant": "#2d476f",
-                    "on-primary-fixed": "#001b3c"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "fontFamily": {
-                    "headline": ["Manrope"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .liquid-glass {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        .hero-gradient {
-            background: linear-gradient(135deg, #002045 0%, #1a365d 100%);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(40px);
-            border: 1px solid rgba(214, 227, 255, 0.2);
-        }
-    </style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Tailwind (must load before main.js so config is applied) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Tailwind config + partial loader + JS logic -->
+    <script src="/js/main.js"></script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/css/styles.css"/>
+
+    <title>People Persuit</title>
 </head>
 <body class="bg-background text-on-surface font-body">
-<!-- TopNavBar -->
-<nav class="sticky top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none transition-all duration-300 ease-in-out">
-<div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-20">
-<div class="text-2xl font-black tracking-tighter text-blue-900 dark:text-blue-100 font-headline">
-                Liquid Intelligence
-            </div>
-<div class="hidden md:flex items-center gap-8 font-manrope text-sm font-semibold tracking-tight">
-<a class="text-blue-900 dark:text-blue-100 border-b-2 border-blue-600 dark:border-blue-400 pb-1 transition-all" href="#">Services</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 dark:hover:text-blue-200 transition-all" href="#">Solutions</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 dark:hover:text-blue-200 transition-all" href="#">About</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="bg-primary hover:opacity-80 text-on-primary px-6 py-2.5 rounded-xl font-semibold text-sm transition-transform active:scale-95 hero-gradient shadow-lg">
-                    Get Started
-                </button>
-</div>
-</div>
-<div class="bg-slate-200/50 dark:bg-slate-800/50 h-[1px] w-full"></div>
-</nav>
-<!-- Hero Section -->
-<section class="relative overflow-hidden pt-20 pb-32">
-<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-<div class="relative z-10">
-<span class="inline-block py-1 px-3 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">
+
+    <!-- ============================================================
+         HEADER — injected from header.html via main.js
+    ============================================================ -->
+    <div id="header-mount"></div>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section class="relative overflow-hidden pt-20 pb-32">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <div class="relative z-10">
+                <span class="inline-block py-1 px-3 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">
                     Human Capital Ecosystem
                 </span>
-<h1 class="text-6xl md:text-7xl font-extrabold font-headline text-primary tracking-tighter leading-tight mb-8">
-                    Redefining <br/> <span class="text-surface-tint italic font-normal">Human Potential</span>
-</h1>
-<p class="text-xl text-on-surface-variant leading-relaxed mb-10 max-w-lg">
+                <h1 class="text-6xl md:text-7xl font-extrabold font-headline text-primary tracking-tighter leading-tight mb-8">
+                    Redefining <br/>
+                    <span class="text-surface-tint italic font-normal">Human Potential</span>
+                </h1>
+                <p class="text-xl text-on-surface-variant leading-relaxed mb-10 max-w-lg">
                     Strategic talent acquisition and organizational performance infrastructure designed for the high-stakes modern enterprise.
                 </p>
-<div class="flex flex-col sm:flex-row gap-4">
-<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold text-lg hero-gradient shadow-xl hover:opacity-90 transition-all active:scale-95">
-                        Optimize Your Team
-                    </button>
-<button class="bg-surface-container-highest text-primary px-8 py-4 rounded-xl font-bold text-lg backdrop-blur-md transition-all hover:bg-surface-dim">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="apply.html" class="inline-block">
+                        <button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold text-lg hero-gradient shadow-xl hover:opacity-90 transition-all active:scale-95">
+                            Apply Now
+                        </button>
+                    </a>
+                    <button class="bg-surface-container-highest text-primary px-8 py-4 rounded-xl font-bold text-lg backdrop-blur-md transition-all hover:bg-surface-dim">
                         View Ecosystem
                     </button>
-</div>
-</div>
-<div class="relative h-[600px] w-full">
-<!-- Asymmetric overlapping layout -->
-<div class="absolute top-0 right-0 w-4/5 h-4/5 rounded-3xl overflow-hidden shadow-2xl z-0 transform translate-x-4 -translate-y-4">
-<img alt="Professional Team" class="w-full h-full object-cover" data-alt="Modern high-end office environment with professional diverse executives collaborating around a sleek conference table in soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyAtuGd9fg1aHviLeriTXIheKCS3uiJDzJwv24qDak4l0k5owX8YoqXi64Rf1wCNiLlN_XwhZYrdiBELX6In_AIS058of5bJmCZp7QsE2S5b9tR95Ptj-YW8gplkZbBYIC7-pAW2nXwUpftDmXosNI0-HH9yq2HgZDF49Bmj2-lNMeUAOFjL55N8gyZNsJrgpbKgzj1JFCebjEhEXXGwnAlIX3oSaZNOl3XIHVAkfBWndZREkX8b_lBwrItf4sL5zquN32WNR8Ua0"/>
-</div>
-<div class="absolute bottom-0 left-0 w-3/5 h-1/2 glass-card rounded-3xl p-8 shadow-xl z-20 translate-y-12 -translate-x-8">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-12 h-12 rounded-full bg-tertiary flex items-center justify-center">
-<span class="material-symbols-outlined text-on-tertiary" data-icon="insights">insights</span>
-</div>
-<div>
-<p class="text-sm font-bold text-tertiary uppercase tracking-wider">Live Metrics</p>
-<p class="text-2xl font-black font-headline text-primary">84% Retention</p>
-</div>
-</div>
-<div class="space-y-3">
-<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
-<div class="h-full bg-tertiary w-[84%]"></div>
-</div>
-<p class="text-sm text-on-surface-variant font-medium">Industry leading human capital stability benchmarks.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Services Section (Core Services) -->
-<section class="bg-surface-container-low py-32">
-<div class="max-w-7xl mx-auto px-6">
-<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-<div class="max-w-2xl">
-<h2 class="text-4xl font-black font-headline text-primary tracking-tight mb-6">Advanced Human Infrastructure</h2>
-<p class="text-lg text-on-surface-variant">Our core services eliminate operational friction, allowing leadership to focus on high-level strategic growth.</p>
-</div>
-<div class="hidden md:block h-px flex-1 bg-outline-variant mx-12 mb-4 opacity-30"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Talent Acquisition -->
-<div class="group p-8 rounded-3xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="person_search">person_search</span>
-</div>
-<h3 class="text-xl font-bold font-headline text-primary mb-4">Talent Acquisition</h3>
-<p class="text-on-surface-variant leading-relaxed">Precision-driven executive search and cultural-fit vetting for high-impact roles.</p>
-</div>
-<!-- Payroll -->
-<div class="group p-8 rounded-3xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="payments">payments</span>
-</div>
-<h3 class="text-xl font-bold font-headline text-primary mb-4">Payroll</h3>
-<p class="text-on-surface-variant leading-relaxed">Global automated disbursements with multi-currency support and real-time auditing.</p>
-</div>
-<!-- Compliance -->
-<div class="group p-8 rounded-3xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="verified_user">verified_user</span>
-</div>
-<h3 class="text-xl font-bold font-headline text-primary mb-4">Compliance</h3>
-<p class="text-on-surface-variant leading-relaxed">Localized legal framework adherence across 120+ jurisdictions automatically.</p>
-</div>
-<!-- Performance Management -->
-<div class="group p-8 rounded-3xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-primary text-3xl" data-icon="trending_up">trending_up</span>
-</div>
-<h3 class="text-xl font-bold font-headline text-primary mb-4">Performance</h3>
-<p class="text-on-surface-variant leading-relaxed">Data-driven performance tracking that maps individual output to enterprise goals.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Why Us (Asymmetric Bento) -->
-<section class="py-32 overflow-hidden">
-<div class="max-w-7xl mx-auto px-6">
-<h2 class="text-center text-4xl font-black font-headline text-primary mb-20">The Curated Difference</h2>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto md:h-[600px]">
-<div class="md:col-span-7 relative bg-primary rounded-[2rem] overflow-hidden group">
-<div class="absolute inset-0 opacity-40 mix-blend-overlay">
-<img alt="Modern Office" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Empty architectural space of a futuristic corporate lobby with clean lines and blue ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSF1WwdqzsUdPm9Uc0WAn-hSjqQQq1L3rBxDS0bGEvawgJcwEvLMzjDMY7nZM1Y0_tmQOCsx6UoIcKy_zSG5Yq87aSROQtpT-9J5q52GvHhZbR2cKYJQf-jFVBTBzL9PRJZcVrliPRPiyvp0Lgb47w7Pz8fH4hrt-k6f1o5HLijaUTw9oDrMHzhKdBwQVyQ1U6gYhWDmjlR-UHLIpHAYJGbUhZgI8XClOivDOlBOK5sJyM3vBtjuuFUA4KDjO9lQ3sA43EVs0dBNc"/>
-</div>
-<div class="relative z-10 p-12 h-full flex flex-col justify-end">
-<h3 class="text-3xl font-bold text-on-primary mb-4">Algorithmic Matchmaking</h3>
-<p class="text-primary-fixed-dim text-lg max-w-md">Our proprietary matching engine goes beyond resumes to analyze psychological safety and team synergy markers.</p>
-</div>
-</div>
-<div class="md:col-span-5 bg-tertiary-fixed rounded-[2rem] p-12 flex flex-col justify-center">
-<div class="w-16 h-16 rounded-full bg-tertiary flex items-center justify-center mb-8 shadow-lg">
-<span class="material-symbols-outlined text-white text-3xl" data-icon="auto_awesome">auto_awesome</span>
-</div>
-<h3 class="text-3xl font-black font-headline text-on-tertiary-fixed mb-6">24/7 Strategic Support</h3>
-<p class="text-on-tertiary-fixed-variant text-lg leading-relaxed">Dedicated human capital strategists paired with AI monitoring ensures your team is always performing at its peak potential.</p>
-</div>
-<div class="md:col-span-5 bg-secondary-container rounded-[2rem] p-12 flex flex-col justify-between">
-<div class="flex -space-x-4 mb-8">
-<div class="w-14 h-14 rounded-full border-4 border-secondary-container bg-slate-300"></div>
-<div class="w-14 h-14 rounded-full border-4 border-secondary-container bg-slate-400"></div>
-<div class="w-14 h-14 rounded-full border-4 border-secondary-container bg-slate-500"></div>
-<div class="w-14 h-14 rounded-full border-4 border-secondary-container bg-primary flex items-center justify-center text-xs text-on-primary font-bold">+500</div>
-</div>
-<div>
-<h3 class="text-2xl font-bold text-on-secondary-container mb-2">Network of 50k+</h3>
-<p class="text-on-secondary-fixed-variant">Instant access to the top 1% of specialized tech and management talent globally.</p>
-</div>
-</div>
-<div class="md:col-span-7 bg-surface-container-highest rounded-[2rem] p-12 flex items-center justify-between group overflow-hidden">
-<div class="max-w-xs">
-<h3 class="text-2xl font-bold text-primary mb-4">Zero Friction Onboarding</h3>
-<p class="text-on-surface-variant">Reduce time-to-productivity from months to days with our automated immersion protocol.</p>
-</div>
-<div class="hidden lg:block transform translate-x-12 translate-y-6 group-hover:translate-x-4 transition-transform duration-500">
-<span class="material-symbols-outlined text-9xl text-primary/5 select-none" data-icon="rocket_launch" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-24">
-<div class="max-w-7xl mx-auto px-6">
-<div class="hero-gradient rounded-[3rem] p-16 relative overflow-hidden flex flex-col items-center text-center">
-<div class="absolute -top-24 -left-24 w-96 h-96 bg-tertiary rounded-full blur-[100px] opacity-20"></div>
-<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-primary-fixed rounded-full blur-[100px] opacity-20"></div>
-<h2 class="text-5xl md:text-6xl font-black font-headline text-white tracking-tighter mb-8 max-w-3xl z-10">
-                    Ready to build your <br/> <span class="italic text-primary-fixed-dim">high-performance</span> future?
+                </div>
+            </div>
+
+            <div class="relative h-[600px] w-full">
+                <div class="absolute top-0 right-0 w-4/5 h-4/5 rounded-3xl overflow-hidden shadow-2xl z-0 transform translate-x-4 -translate-y-4">
+                    <img
+                        alt="Professional Team"
+                        class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyAtuGd9fg1aHviLeriTXIheKCS3uiJDzJwv24qDak4l0k5owX8YoqXi64Rf1wCNiLlN_XwhZYrdiBELX6In_AIS058of5bJmCZp7QsE2S5b9tR95Ptj-YW8gplkZbBYIC7-pAW2nXwUpftDmXosNI0-HH9yq2HgZDF49Bmj2-lNMeUAOFjL55N8gyZNsJrgpbKgzj1JFCebjEhEXXGwnAlIX3oSaZNOl3XIHVAkfBWndZREkX8b_lBwrItf4sL5zquN32WNR8Ua0"
+                    />
+                </div>
+                <div class="absolute bottom-0 left-0 w-3/5 h-1/2 glass-card rounded-3xl p-8 shadow-xl z-20 translate-y-12 -translate-x-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-tertiary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-on-tertiary">insights</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-tertiary uppercase tracking-wider">Live Metrics</p>
+                            <p class="text-2xl font-black font-headline text-primary">84% Retention</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+                            <div class="h-full bg-tertiary w-[84%]"></div>
+                        </div>
+                        <p class="text-sm text-on-surface-variant font-medium">Industry leading human capital stability benchmarks.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES SECTION
+    ============================================================ -->
+    <section class="bg-surface-container-low py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl font-black font-headline text-primary tracking-tight mb-6">Advanced Human Infrastructure</h2>
+                    <p class="text-lg text-on-surface-variant">Our core services eliminate operational friction, allowing leadership to focus on high-level strategic growth.</p>
+                </div>
+                <div class="hidden md:block h-px flex-1 bg-outline-variant mx-12 mb-4 opacity-30"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="group p-8 rounded-3xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-3xl">person_search</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline text-primary mb-4">Talent Acquisition</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Precision-driven executive search and cultural-fit vetting for high-impact roles.</p>
+                </div>
+
+                <div class="group p-8 rounded-3xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-3xl">payments</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline text-primary mb-4">Payroll</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Global automated disbursements with multi-currency support and real-time auditing.</p>
+                </div>
+
+                <div class="group p-8 rounded-3xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline text-primary mb-4">Compliance</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Localized legal framework adherence across 120+ jurisdictions automatically.</p>
+                </div>
+
+                <div class="group p-8 rounded-3xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-3xl">trending_up</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline text-primary mb-4">Performance</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Data-driven performance tracking that maps individual output to enterprise goals.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WHY US – ASYMMETRIC BENTO GRID
+    ============================================================ -->
+    <section class="py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-center text-4xl font-black font-headline text-primary mb-20">The Curated Difference</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto md:h-[600px]">
+
+                <div class="md:col-span-7 relative bg-primary rounded-[2rem] overflow-hidden group">
+                    <div class="absolute inset-0 opacity-40 mix-blend-overlay">
+                        <img
+                            alt="Modern Office"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSF1WwdqzsUdPm9Uc0WAn-hSjqQQq1L3rBxDS0bGEvawgJcwEvLMzjDMY7nZM1Y0_tmQOCsx6UoIcKy_zSG5Yq87aSROQtpT-9J5q52GvHhZbR2cKYJQf-jFVBTBzL9PRJZcVrliPRPiyvp0Lgb47w7Pz8fH4hrt-k6f1o5HLijaUTw9oDrMHzhKdBwQVyQ1U6gYhWDmjlR-UHLIpHAYJGbUhZgI8XClOivDOlBOK5sJyM3vBtjuuFUA4KDjO9lQ3sA43EVs0dBNc"
+                        />
+                    </div>
+                    <div class="relative z-10 p-12 h-full flex flex-col justify-end">
+                        <h3 class="text-3xl font-bold text-on-primary mb-4">Algorithmic Matchmaking</h3>
+                        <p class="text-primary-fixed-dim text-lg max-w-md">Our proprietary matching engine goes beyond resumes to analyze psychological safety and team synergy markers.</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-5 bg-tertiary-fixed rounded-[2rem] p-12 flex flex-col justify-center">
+                    <div class="w-16 h-16 rounded-full bg-tertiary flex items-center justify-center mb-8 shadow-lg">
+                        <span class="material-symbols-outlined text-white text-3xl">auto_awesome</span>
+                    </div>
+                    <h3 class="text-3xl font-black font-headline text-on-tertiary-fixed mb-6">24/7 Strategic Support</h3>
+                    <p class="text-on-tertiary-fixed-variant text-lg leading-relaxed">Dedicated human capital strategists paired with AI monitoring ensures your team is always performing at its peak potential.</p>
+                </div>
+
+                <div class="md:col-span-5 bg-secondary-container rounded-[2rem] p-12 flex flex-col justify-between">
+                    <div class="flex -space-x-4 mb-8">
+                        <div class="w-14 h-14 rounded-full border-4 border-secondary-container bg-slate-300"></div>
+                        <div class="w-14 h-14 rounded-full border-4 border-secondary-container bg-slate-400"></div>
+                        <div class="w-14 h-14 rounded-full border-4 border-secondary-container bg-slate-500"></div>
+                        <div class="w-14 h-14 rounded-full border-4 border-secondary-container bg-primary flex items-center justify-center text-xs text-on-primary font-bold">+500</div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-on-secondary-container mb-2">Network of 50k+</h3>
+                        <p class="text-on-secondary-fixed-variant">Instant access to the top 1% of specialized tech and management talent globally.</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-7 bg-surface-container-highest rounded-[2rem] p-12 flex items-center justify-between group overflow-hidden">
+                    <div class="max-w-xs">
+                        <h3 class="text-2xl font-bold text-primary mb-4">Zero Friction Onboarding</h3>
+                        <p class="text-on-surface-variant">Reduce time-to-productivity from months to days with our automated immersion protocol.</p>
+                    </div>
+                    <div class="hidden lg:block transform translate-x-12 translate-y-6 group-hover:translate-x-4 transition-transform duration-500">
+                        <span class="material-symbols-outlined text-9xl text-primary/5 select-none" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CTA SECTION
+    ============================================================ -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="hero-gradient rounded-[3rem] p-16 relative overflow-hidden flex flex-col items-center text-center">
+                <div class="absolute -top-24 -left-24 w-96 h-96 bg-tertiary rounded-full blur-[100px] opacity-20"></div>
+                <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-primary-fixed rounded-full blur-[100px] opacity-20"></div>
+                <h2 class="text-5xl md:text-6xl font-black font-headline text-white tracking-tighter mb-8 max-w-3xl z-10">
+                    Ready to build your <br/>
+                    <span class="italic text-primary-fixed-dim">high-performance</span> future?
                 </h2>
-<p class="text-primary-fixed text-xl mb-12 max-w-xl z-10 opacity-80">
+                <p class="text-primary-fixed text-xl mb-12 max-w-xl z-10 opacity-80">
                     Join 200+ industry leaders who have optimized their human capital strategy with People Pursuit.
                 </p>
-<div class="flex flex-col sm:flex-row gap-6 z-10">
-<button class="bg-white text-primary px-10 py-5 rounded-full font-black text-lg shadow-2xl hover:scale-105 transition-transform active:scale-95">
+                <div class="flex flex-col sm:flex-row gap-6 z-10">
+                    <button class="bg-white text-primary px-10 py-5 rounded-full font-black text-lg shadow-2xl hover:scale-105 transition-transform active:scale-95">
                         Optimize Your Team
                     </button>
-<button class="border border-white/20 bg-white/10 backdrop-blur-md text-white px-10 py-5 rounded-full font-black text-lg hover:bg-white/20 transition-all">
+                    <button class="border border-white/20 bg-white/10 backdrop-blur-md text-white px-10 py-5 rounded-full font-black text-lg hover:bg-white/20 transition-all">
                         Request Consultation
                     </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 font-inter text-sm leading-relaxed">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-6 py-16">
-<div class="space-y-6">
-<div class="text-xl font-bold text-blue-900 dark:text-blue-100 font-headline">
-                    Liquid Intelligence
                 </div>
-<p class="text-slate-500 dark:text-slate-400">
-                    Curating human potential through advanced digital ecosystems and strategic intelligence.
-                </p>
-<div class="flex gap-4">
-<span class="material-symbols-outlined text-slate-400 hover:text-blue-600 transition-colors cursor-pointer" data-icon="public">public</span>
-<span class="material-symbols-outlined text-slate-400 hover:text-blue-600 transition-colors cursor-pointer" data-icon="hub">hub</span>
-<span class="material-symbols-outlined text-slate-400 hover:text-blue-600 transition-colors cursor-pointer" data-icon="share">share</span>
-</div>
-</div>
-<div>
-<h4 class="text-blue-900 dark:text-blue-400 font-bold mb-6">Platforms</h4>
-<ul class="space-y-4">
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Talent Portal</a></li>
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Executive Search</a></li>
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Analytics Engine</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-blue-900 dark:text-blue-400 font-bold mb-6">Company</h4>
-<ul class="space-y-4">
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">About Us</a></li>
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Careers</a></li>
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Contact</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-blue-900 dark:text-blue-400 font-bold mb-6">Legal</h4>
-<ul class="space-y-4">
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Terms of Service</a></li>
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" href="#">Cookie Policy</a></li>
-</ul>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-6 py-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-slate-500 dark:text-slate-400 text-xs">
-                © 2024 Liquid Intelligence Human Capital. All rights reserved.
-            </p>
-<div class="flex gap-8 text-xs font-medium uppercase tracking-widest text-slate-400">
-<span>London</span>
-<span>New York</span>
-<span>Singapore</span>
-</div>
-</div>
-</footer>
-</body></html>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER — injected from footer.html via main.js
+    ============================================================ -->
+    <div id="footer-mount"></div>
+
+</body>
+</html>
