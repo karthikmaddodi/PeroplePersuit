@@ -1,584 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style.css">
-	<title>PeoplPursuit</title>
-<!--
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-Tooplate 2095 Level
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-https://www.tooplate.com/view/2095-level
+    <!-- Tailwind (must load before main.js so config is applied) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
--->
-    <!-- load stylesheets -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">  <!-- Google web font "Open Sans" -->
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">                <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
-    <link rel="stylesheet" href="css/tooplate-style.css">                                   <!-- Templatemo style -->
+    <!-- Tailwind config + partial loader + JS logic -->
+    <script src="/js/main.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-          <![endif]-->
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/css/styles.css"/>
+
+    <title>People Persuit</title>
 </head>
+<body class="bg-background text-on-surface font-body">
 
-    <body>
-        <div class="tm-main-content" id="top">
-            <div class="tm-top-bar-bg"></div>
-            <div class="tm-top-bar" id="tm-top-bar">
-                <!-- Top Navbar -->
-                <div class="container">
-                    <div class="row">
-                        
-                        <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand mr-auto" href="#">
-                                <img src="img/logo.png" alt="Site logo">
-                                PeoplPursuit
-                            </a>
-                            <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
-                                <ul class="navbar-nav ml-auto">
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#top">Home <span class="sr-only">(current)</span></a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#tm-section-4">About Us</a>
-                                  </li>
-								  <li class="nav-item">
-                                    <a class="nav-link" href="#tm-section-4">Services</a>
-                                  </li>
-								  <li class="nav-item">
-                                    <a class="nav-link" href="#tm-section-4">Career</a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#tm-section-5">ATS</a>
-                                  </li>
-                                  <li class="nav-item">
-                                    <a class="nav-link" href="#tm-section-6">Contact Us</a>
-                                  </li>
-								  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Login</a>
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="loginDropdown">
-        <a class="dropdown-item" href="#Candidate-login">Candidate Login</a>
-        <a class="dropdown-item" href="#employer-login">Employer Login</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#register">Create an Account</a>
-    </div>
-</li>
-                                </ul>
-                            </div>                            
-                        </nav>            
+    <!-- ============================================================
+         HEADER — injected from header.html via main.js
+    ============================================================ -->
+    <div id="header-mount"></div>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section class="relative overflow-hidden pt-20 pb-32">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <div class="relative z-10">
+                <span class="inline-block py-1 px-3 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase mb-6">
+                    Human Capital Ecosystem
+                </span>
+                <h1 class="text-6xl md:text-7xl font-extrabold font-headline text-primary tracking-tighter leading-tight mb-8">
+                    Redefining <br/>
+                    <span class="text-surface-tint italic font-normal">Human Potential</span>
+                </h1>
+                <p class="text-xl text-on-surface-variant leading-relaxed mb-10 max-w-lg">
+                    Strategic talent acquisition and organizational performance infrastructure designed for the high-stakes modern enterprise.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="apply.html" class="inline-block">
+                        <button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold text-lg hero-gradient shadow-xl hover:opacity-90 transition-all active:scale-95">
+                            Apply Now
+                        </button>
+                    </a>
+                    <button class="bg-surface-container-highest text-primary px-8 py-4 rounded-xl font-bold text-lg backdrop-blur-md transition-all hover:bg-surface-dim">
+                        View Ecosystem
+                    </button>
+                </div>
+            </div>
+
+            <div class="relative h-[600px] w-full">
+                <div class="absolute top-0 right-0 w-4/5 h-4/5 rounded-3xl overflow-hidden shadow-2xl z-0 transform translate-x-4 -translate-y-4">
+                    <img
+                        alt="Professional Team"
+                        class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyAtuGd9fg1aHviLeriTXIheKCS3uiJDzJwv24qDak4l0k5owX8YoqXi64Rf1wCNiLlN_XwhZYrdiBELX6In_AIS058of5bJmCZp7QsE2S5b9tR95Ptj-YW8gplkZbBYIC7-pAW2nXwUpftDmXosNI0-HH9yq2HgZDF49Bmj2-lNMeUAOFjL55N8gyZNsJrgpbKgzj1JFCebjEhEXXGwnAlIX3oSaZNOl3XIHVAkfBWndZREkX8b_lBwrItf4sL5zquN32WNR8Ua0"
+                    />
+                </div>
+                <div class="absolute bottom-0 left-0 w-3/5 h-1/2 glass-card rounded-3xl p-8 shadow-xl z-20 translate-y-12 -translate-x-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-tertiary flex items-center justify-center">
+                            <span class="material-symbols-outlined text-on-tertiary">insights</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-tertiary uppercase tracking-wider">Live Metrics</p>
+                            <p class="text-2xl font-black font-headline text-primary">84% Retention</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+                            <div class="h-full bg-tertiary w-[84%]"></div>
+                        </div>
+                        <p class="text-sm text-on-surface-variant font-medium">Industry leading human capital stability benchmarks.</p>
                     </div>
                 </div>
             </div>
-            <section style="margin-top: 60px;color: rgb(137, 255, 233); font-size: clamp(1.5rem, 8vw, 3.5rem);">
-      <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <h1 style="color: rgb(146, 6, 6); font-size: clamp(1.5rem, 8vw, 3.5rem); font-weight: 700; text-transform: capitalize; margin-bottom: 20px;">Beyond Recruitment, We Build Futures.</h1>
-				<h2 style="color: rgba(61, 34, 150, 0.95); font-size: clamp(1rem, 5vw, 1.5rem); font-weight: 300; margin-bottom: 30px;">Welcome to People Pursuit, where we believe that the right person in the right role can change the course of a business. In today's dynamic market, finding exceptional talent isn't just a task—it's a strategic imperative. That's where we come in.
 
-Founded on the principle of a meticulous, human-centric approach, People Pursuit is more than a recruitment firm; we are architects of high-performing teams. We don't just fill vacancies. We forge lasting partnerships by understanding your company's DNA—your vision, your culture, and the unique challenges you face. Our "pursuit" is relentless and precise, ensuring we connect you with professionals who not only possess the right skills but also share your passion and drive for success.</h2>
-			
-				
-<a href="#tm-section-1" class="btn btn-light btn-lg" style="padding: 12px 40px; font-weight: 600; border-radius: 5px; display: inline-block;">54</a>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES SECTION
+    ============================================================ -->
+    <section class="bg-surface-container-low py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-2xl">
+                    <h2 class="text-4xl font-black font-headline text-primary tracking-tight mb-6">Advanced Human Infrastructure</h2>
+                    <p class="text-lg text-on-surface-variant">Our core services eliminate operational friction, allowing leadership to focus on high-level strategic growth.</p>
+                </div>
+                <div class="hidden md:block h-px flex-1 bg-outline-variant mx-12 mb-4 opacity-30"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="group p-8 rounded-3xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-3xl">person_search</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline text-primary mb-4">Talent Acquisition</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Precision-driven executive search and cultural-fit vetting for high-impact roles.</p>
+                </div>
+
+                <div class="group p-8 rounded-3xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-3xl">payments</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline text-primary mb-4">Payroll</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Global automated disbursements with multi-currency support and real-time auditing.</p>
+                </div>
+
+                <div class="group p-8 rounded-3xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline text-primary mb-4">Compliance</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Localized legal framework adherence across 120+ jurisdictions automatically.</p>
+                </div>
+
+                <div class="group p-8 rounded-3xl bg-surface-container-lowest transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-3xl">trending_up</span>
+                    </div>
+                    <h3 class="text-xl font-bold font-headline text-primary mb-4">Performance</h3>
+                    <p class="text-on-surface-variant leading-relaxed">Data-driven performance tracking that maps individual output to enterprise goals.</p>
+                </div>
+
             </div>
         </div>
-        
-    </div>
-</section>
-				<section class="tm-section tm-bg-img py-5" id="tm-section-2" style="display: flex; align-items: center; justify-content: center; min-height: 400px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <h1 style="color: white; font-size: clamp(1.5rem, 8vw, 3.5rem); font-weight: 700; text-transform: capitalize; margin-bottom: 20px;">Find your dream career today</h1>
-				<h3 style="color: rgba(255, 255, 255, 0.95); font-size: clamp(1rem, 5vw, 1.5rem); font-weight: 300; margin-bottom: 30px;">Browse thousands of job openings in your industry</h3>
-				<a href="#tm-section-1" class="btn btn-light btn-lg" style="padding: 12px 40px; font-weight: 600; border-radius: 5px; display: inline-block;">Search Jobs</a>
+    </section>
+
+    <!-- ============================================================
+         WHY US – ASYMMETRIC BENTO GRID
+    ============================================================ -->
+    <section class="py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-center text-4xl font-black font-headline text-primary mb-20">The Curated Difference</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto md:h-[600px]">
+
+                <div class="md:col-span-7 relative bg-primary rounded-[2rem] overflow-hidden group">
+                    <div class="absolute inset-0 opacity-40 mix-blend-overlay">
+                        <img
+                            alt="Modern Office"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSF1WwdqzsUdPm9Uc0WAn-hSjqQQq1L3rBxDS0bGEvawgJcwEvLMzjDMY7nZM1Y0_tmQOCsx6UoIcKy_zSG5Yq87aSROQtpT-9J5q52GvHhZbR2cKYJQf-jFVBTBzL9PRJZcVrliPRPiyvp0Lgb47w7Pz8fH4hrt-k6f1o5HLijaUTw9oDrMHzhKdBwQVyQ1U6gYhWDmjlR-UHLIpHAYJGbUhZgI8XClOivDOlBOK5sJyM3vBtjuuFUA4KDjO9lQ3sA43EVs0dBNc"
+                        />
+                    </div>
+                    <div class="relative z-10 p-12 h-full flex flex-col justify-end">
+                        <h3 class="text-3xl font-bold text-on-primary mb-4">Algorithmic Matchmaking</h3>
+                        <p class="text-primary-fixed-dim text-lg max-w-md">Our proprietary matching engine goes beyond resumes to analyze psychological safety and team synergy markers.</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-5 bg-tertiary-fixed rounded-[2rem] p-12 flex flex-col justify-center">
+                    <div class="w-16 h-16 rounded-full bg-tertiary flex items-center justify-center mb-8 shadow-lg">
+                        <span class="material-symbols-outlined text-white text-3xl">auto_awesome</span>
+                    </div>
+                    <h3 class="text-3xl font-black font-headline text-on-tertiary-fixed mb-6">24/7 Strategic Support</h3>
+                    <p class="text-on-tertiary-fixed-variant text-lg leading-relaxed">Dedicated human capital strategists paired with AI monitoring ensures your team is always performing at its peak potential.</p>
+                </div>
+
+                <div class="md:col-span-5 bg-secondary-container rounded-[2rem] p-12 flex flex-col justify-between">
+                    <div class="flex -space-x-4 mb-8">
+                        <div class="w-14 h-14 rounded-full border-4 border-secondary-container bg-slate-300"></div>
+                        <div class="w-14 h-14 rounded-full border-4 border-secondary-container bg-slate-400"></div>
+                        <div class="w-14 h-14 rounded-full border-4 border-secondary-container bg-slate-500"></div>
+                        <div class="w-14 h-14 rounded-full border-4 border-secondary-container bg-primary flex items-center justify-center text-xs text-on-primary font-bold">+500</div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-on-secondary-container mb-2">Network of 50k+</h3>
+                        <p class="text-on-secondary-fixed-variant">Instant access to the top 1% of specialized tech and management talent globally.</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-7 bg-surface-container-highest rounded-[2rem] p-12 flex items-center justify-between group overflow-hidden">
+                    <div class="max-w-xs">
+                        <h3 class="text-2xl font-bold text-primary mb-4">Zero Friction Onboarding</h3>
+                        <p class="text-on-surface-variant">Reduce time-to-productivity from months to days with our automated immersion protocol.</p>
+                    </div>
+                    <div class="hidden lg:block transform translate-x-12 translate-y-6 group-hover:translate-x-4 transition-transform duration-500">
+                        <span class="material-symbols-outlined text-9xl text-primary/5 select-none" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+                    </div>
+                </div>
+
             </div>
         </div>
-        
-    </div>
-    
-</section>
+    </section>
 
-
-			<div class="tm-section tm-bg-img" id="tm-section-1">
-    <div class="tm-bg-white ie-container-width-fix-2">
-        <div class="container ie-h-align-center-fix">
-            <form action="job-results.html" method="get" class="tm-search-form" style="padding: 15px;">
-                <!-- First Row: Keyword Search (Full Width) -->
-                <div class="row g-2 mb-2">
-                    <div class="col-12">
-                        <div class="form-group position-relative">
-                            <i class="fa fa-search fa-lg tm-form-element-icon"></i>
-                            <input name="keyword" type="text" class="form-control form-control-lg" id="inputKeyword" placeholder="Job Title, Skills, or Company">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Second Row: Location and Category -->
-                <div class="row g-2 mb-2">
-                    <div class="col-12 col-md-6 mb-2 mb-md-0">
-                        <div class="form-group position-relative">
-                            <i class="fa fa-map-marker fa-lg tm-form-element-icon"></i>
-                            <input name="location" type="text" class="form-control form-control-lg" id="inputLocation" placeholder="City or Remote">
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="form-group position-relative">
-                            <i class="fa fa-briefcase fa-lg tm-form-element-icon"></i>
-                            <select name="category" class="form-control form-control-lg tm-select" id="inputCategory">
-                                <option value="">All Categories</option>
-                                <option value="it">Technology</option>
-                                <option value="finance">Finance</option>
-                                <option value="healthcare">Healthcare</option>
-                                <option value="education">Education</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Third Row: Job Type, Experience, and Salary -->
-                <div class="row g-2 mb-2">
-                    <div class="col-12 col-sm-6 col-md-4 mb-2 mb-md-0">
-                        <div class="form-group position-relative">
-                            <i class="fa fa-clock-o fa-lg tm-form-element-icon"></i>
-                            <select name="job-type" class="form-control form-control-lg tm-select" id="jobType">
-                                <option value="">Job Type</option>
-                                <option value="full-time">Full-time</option>
-                                <option value="part-time">Part-time</option>
-                                <option value="contract">Contract</option>
-                                <option value="internship">Internship</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-4 mb-2 mb-md-0">
-                        <div class="form-group position-relative">
-                            <i class="fa fa-graduation-cap fa-lg tm-form-element-icon"></i>
-                            <select name="experience" class="form-control form-control-lg tm-select" id="experience">
-                                <option value="">Experience</option>
-                                <option value="entry">Entry Level</option>
-                                <option value="mid">Mid Level</option>
-                                <option value="senior">Senior Level</option>
-                                <option value="executive">Executive</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-4">
-                        <div class="form-group position-relative">
-                            <i class="fa fa-money fa-lg tm-form-element-icon"></i>
-                            <select name="salary" class="form-control form-control-lg tm-select" id="salary">
-                                <option value="">Salary Range</option>
-                                <option value="1">$0 - $50k</option>
-                                <option value="2">$50k - $100k</option>
-                                <option value="3">$100k - $150k</option>
-                                <option value="4">$150k+</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Button Row -->
-                <div class="row g-2">
-                    <div class="col-12 mb-2">
-                        <button type="submit" class="btn btn-primary btn-lg w-100">Search Jobs</button>
-                    </div>
-                </div>
-                
-                <!-- Footer Text -->
-                <div class="row g-2 mt-2">
-                    <div class="col-12 col-md-6">
-                        <p class="tm-margin-b-0">Find your dream career today.</p>
-                    </div>
-            
-                </div>
-            </form>
-        </div>      
-    </div>                  
-</div>
-     
-            <div class="tm-section-2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col text-center">
-                            <h2 class="tm-section-title">We are here to help you?</h2>
-                            <p class="tm-color-white tm-section-subtitle">Subscribe to get our newsletters</p>
-                            <a href="#" class="tm-color-white tm-btn-white-bordered">Subscribe Newletters</a>
-                        </div>                
-                    </div>
-                </div>        
-            </div>
-            
-            <div class="tm-section tm-position-relative">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" class="tm-section-down-arrow">
-                    <polygon fill="#ee5057" points="0,0  100,0  50,60"></polygon>                   
-                </svg> 
-                <div class="container tm-pt-5 tm-pb-4">
-                    <div class="row text-center">
-                        <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">                            
-                            <i class="fa tm-fa-6x fa-legal tm-color-primary tm-margin-b-20"></i>
-                            <h3 class="tm-color-primary tm-article-title-1">Level HTML Template by Tooplate website</h3>
-                            <p>You are allowed to download, edit and use this template for your business or client websites.</p>
-                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
-                        </article>
-                        <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">                            
-                            <i class="fa tm-fa-6x fa-plane tm-color-primary tm-margin-b-20"></i>
-                            <h3 class="tm-color-primary tm-article-title-1">Original Website Template Producer</h3>
-                            <p>You are NOT allowed to re-distribute the downloadable template ZIP file on any website.</p>
-                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>                            
-                        </article>
-                        <article class="col-sm-12 col-md-4 col-lg-4 col-xl-4 tm-article">                           
-                            <i class="fa tm-fa-6x fa-life-saver tm-color-primary tm-margin-b-20"></i>
-                            <h3 class="tm-color-primary tm-article-title-1">Contact us if you have any question</h3>
-                            <p>If you see this template being distributed on any other site, that is an illegal copy.</p>
-                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>                           
-                        </article>
-                    </div>        
+    <!-- ============================================================
+         CTA SECTION
+    ============================================================ -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="hero-gradient rounded-[3rem] p-16 relative overflow-hidden flex flex-col items-center text-center">
+                <div class="absolute -top-24 -left-24 w-96 h-96 bg-tertiary rounded-full blur-[100px] opacity-20"></div>
+                <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-primary-fixed rounded-full blur-[100px] opacity-20"></div>
+                <h2 class="text-5xl md:text-6xl font-black font-headline text-white tracking-tighter mb-8 max-w-3xl z-10">
+                    Ready to build your <br/>
+                    <span class="italic text-primary-fixed-dim">high-performance</span> future?
+                </h2>
+                <p class="text-primary-fixed text-xl mb-12 max-w-xl z-10 opacity-80">
+                    Join 200+ industry leaders who have optimized their human capital strategy with People Pursuit.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 z-10">
+                    <button class="bg-white text-primary px-10 py-5 rounded-full font-black text-lg shadow-2xl hover:scale-105 transition-transform active:scale-95">
+                        Optimize Your Team
+                    </button>
+                    <button class="border border-white/20 bg-white/10 backdrop-blur-md text-white px-10 py-5 rounded-full font-black text-lg hover:bg-white/20 transition-all">
+                        Request Consultation
+                    </button>
                 </div>
             </div>
-            
-            <div class="tm-section tm-section-pad tm-bg-gray" id="tm-section-4">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
-                            <div class="tm-article-carousel">                            
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/img-01.jpg" alt="Image" class="img-fluid">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Nunc in felis aliquet metus luctus iaculis</h3></header>
-                                        <p>Aliquam ac lacus volutpat, dictum risus at, scelerisque nulla. Nullam sollicitudin at augue venenatis eleifend. Nulla ligula ligula, egestas sit amet viverra id, iaculis sit amet ligula.</p>
-                                        <a href="#" class="text-uppercase btn-primary tm-btn-primary">Get More Info.</a>
-                                    </div>                                
-                                </article>                    
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/img-02.jpg" alt="Image" class="img-fluid">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Sed cursus dictum nunc quis molestie</h3></header>
-                                        <p>Pellentesque quis dui sit amet purus scelerisque eleifend sed ut eros. Morbi viverra blandit massa in varius. Sed nec ex eu ex tincidunt iaculis. Curabitur eget turpis gravida.</p>
-                                        <a href="#" class="text-uppercase btn-primary tm-btn-primary">View Detail</a>
-                                    </div>                                
-                                </article>
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/img-01.jpg" alt="Image" class="img-fluid">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Eget diam pellentesque interdum ut porta</h3></header>
-                                        <p>Aenean finibus tempor nulla, et maximus nibh dapibus ac. Duis consequat sed sapien venenatis consequat. Aliquam ac lacus volutpat, dictum risus at, scelerisque nulla.</p>
-                                        <a href="#" class="text-uppercase btn-primary tm-btn-primary">More Info.</a>
-                                    </div>                                
-                                </article>
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/img-02.jpg" alt="Image" class="img-fluid">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Lorem ipsum dolor sit amet, consectetur</h3></header>
-                                        <p>Suspendisse molestie sed dui eget faucibus. Duis accumsan sagittis tortor in ultrices. Praesent tortor ante, fringilla ac nibh porttitor, fermentum commodo nulla.</p>
-                                        <a href="#" class="text-uppercase btn-primary tm-btn-primary">Detail Info.</a>
-                                    </div>                                
-                                </article>                    
-                                <article class="tm-bg-white mr-2 tm-carousel-item">
-                                    <img src="img/img-01.jpg" alt="Image" class="img-fluid">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Orci varius natoque penatibus et</h3></header>
-                                        <p>Pellentesque quis dui sit amet purus scelerisque eleifend sed ut eros. Morbi viverra blandit massa in varius. Sed nec ex eu ex tincidunt iaculis. Curabitur eget turpis gravida.</p>
-                                        <a href="#" class="text-uppercase btn-primary tm-btn-primary">Read More</a>
-                                    </div>                                
-                                </article>
-                                <article class="tm-bg-white tm-carousel-item">
-                                    <img src="img/img-02.jpg" alt="Image" class="img-fluid">
-                                    <div class="tm-article-pad">
-                                        <header><h3 class="text-uppercase tm-article-title-2">Nullam sollicitudin at augue venenatis eleifend</h3></header>
-                                        <p>Aenean finibus tempor nulla, et maximus nibh dapibus ac. Duis consequat sed sapien venenatis consequat. Aliquam ac lacus volutpat, dictum risus at, scelerisque nulla.</p>
-                                        <a href="#" class="text-uppercase btn-primary tm-btn-primary">More Details</a>
-                                    </div>                                
-                                </article>
-                            </div>    
-                        </div>
-                        
-                        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-recommended-container">
-                            <div class="tm-bg-white">
-                                <div class="tm-bg-primary tm-sidebar-pad">
-                                    <h3 class="tm-color-white tm-sidebar-title">Recommended Places</h3>
-                                    <p class="tm-color-white tm-margin-b-0 tm-font-light">Enamel pin cliche tilde, kitsch and VHS thundercats</p>
-                                </div>
-                                <div class="tm-sidebar-pad-2">
-                                    <a href="#" class="media tm-media tm-recommended-item">
-                                        <img src="img/tn-img-01.jpg" alt="Image">
-                                        <div class="media-body tm-media-body tm-bg-gray">
-                                            <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">Europe</h4>
-                                        </div>                                        
-                                    </a>
-                                    <a href="#" class="media tm-media tm-recommended-item">
-                                        <img src="img/tn-img-02.jpg" alt="Image">
-                                        <div class="media-body tm-media-body tm-bg-gray">
-                                            <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">Asia</h4>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="media tm-media tm-recommended-item">
-                                        <img src="img/tn-img-03.jpg" alt="Image">
-                                        <div class="media-body tm-media-body tm-bg-gray">
-                                            <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">Africa</h4>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="media tm-media tm-recommended-item">
-                                        <img src="img/tn-img-04.jpg" alt="Image">
-                                        <div class="media-body tm-media-body tm-bg-gray">
-                                            <h4 class="text-uppercase tm-font-semibold tm-sidebar-item-title">South America</h4>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tm-bg-video">
-                <div class="overlay">
-                    <i class="fa fa-5x fa-play-circle tm-btn-play"></i>
-                    <i class="fa fa-5x fa-pause-circle tm-btn-pause"></i>
-                </div>
-                <video controls="" loop="" class="tmVideo">
-                    <source src="videos/video.mp4" type="video/mp4">
-                    <source src="videos/video.ogg" type="video/ogg">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="tm-section tm-section-pad tm-bg-img" id="tm-section-5">                                                        
-                    <div class="container ie-h-align-center-fix">
-                        <div class="row tm-flex-align-center">
-                            <div class="col-xs-12 col-md-12 col-lg-3 col-xl-3 tm-media-title-container">
-                                <h2 class="text-uppercase tm-section-title-2">ASIA</h2>
-                                <h3 class="tm-color-primary tm-font-semibold tm-section-subtitle-2">Singapore</h3>
-                            </div>
-                            <div class="col-xs-12 col-md-12 col-lg-9 col-xl-9 mt-0 mt-sm-3">
-                                <div class="ml-auto tm-bg-white-shadow tm-pad tm-media-container">
-                                    <article class="media tm-margin-b-20 tm-media-1">
-                                        <img src="img/img-03.jpg" alt="Image">
-                                        <div class="media-body tm-media-body-1 tm-media-body-v-center">
-                                            <h3 class="tm-font-semibold tm-color-primary tm-article-title-3">Suspendisse vel est libero sem phasellus ac laoreet</h3>
-                                            <p>Vivamus eget tellus ornare, sollicitudin quam id, dictum nulla. Phasellus finibus rhoncus justo, tempus eleifend neque dictum ac. Aenean metus leo, consectetur non. 
-                                            <br><br>
-											Etiam aliquam arcu at mauris consectetur scelerisque. Integer elementum justo in orci facilisis ultricies. Pellentesque at velit ante. Duis scelerisque metus vel felis porttitor gravida.</p>
-                                        </div>                                
-                                    </article>
-                                    <article class="media tm-margin-b-20 tm-media-1">
-                                        <img src="img/img-04.jpg" alt="Image">
-                                        <div class="media-body tm-media-body-1 tm-media-body-v-center">
-                                            <h3 class="tm-font-semibold tm-article-title-3">Suspendisse vel est libero sem phasellus ac laoreet</h3>
-                                            <p>Duis accumsan sagittis tortor in ultrices. Praesent tortor ante, fringilla ac nibh porttitor, fermentum commodo nulla.</p>
-                                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
-                                        </div>                                
-                                    </article>
-                                    <article class="media tm-margin-b-20 tm-media-1">
-                                        <img src="img/img-05.jpg" alt="Image">
-                                        <div class="media-body tm-media-body-1 tm-media-body-v-center">
-                                            <h3 class="tm-font-semibold tm-article-title-3">Faucibus dolor ligula nisl metus auctor aliquet</h3>
-                                            <p>Nunc in felis aliquet metus luctus iaculis vel et nisi. Nulla venenatis nisl orci, laoreet ultricies massa tristique id.</p>
-                                            <a href="#" class="text-uppercase tm-color-primary tm-font-semibold">Continue reading...</a>
-                                        </div>                                
-                                    </article>
-                                </div>                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>           
-            
-            <div class="tm-section tm-section-pad tm-bg-img tm-position-relative" id="tm-section-6">
-                <div class="container ie-h-align-center-fix">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-7">
-                            <div id="google-map"></div>        
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-5 mt-3 mt-md-0">
-                            <div class="tm-bg-white tm-p-4">
-                                <form action="index.html" method="post" class="contact-form">
-                                    <div class="form-group">
-                                        <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name"  required/>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email"  required/>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" id="contact_subject" name="contact_subject" class="form-control" placeholder="Subject"  required/>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Message" required></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary tm-btn-primary">Send Message Now</button>
-                                </form>
-                            </div>                            
-                        </div>
-                    </div>        
-                </div>
-            </div>
-            
-            <footer class="tm-bg-dark-blue">
-                <div class="container">
-                    <div class="row">
-                        <p class="col-sm-12 text-center tm-font-light tm-color-white p-4 tm-margin-b-0">
-                        Copyright &copy; <span class="tm-current-year">2018</span> Your Company
-                        
-                        - Design: <a rel="nofollow" href="https://www.tooplate.com" class="tm-color-primary tm-font-normal" target="_parent">Tooplate</a></p>        
-                    </div>
-                </div>                
-            </footer>
         </div>
-        
-        <!-- load JS files -->
-        <script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
-        <script src="js/popper.min.js"></script>                    <!-- https://popper.js.org/ -->       
-        <script src="js/bootstrap.min.js"></script>                 <!-- https://getbootstrap.com/ -->
-        <script src="js/datepicker.min.js"></script>                <!-- https://github.com/qodesmith/datepicker -->
-        <script src="js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
-        <script src="slick/slick.min.js"></script>                  <!-- http://kenwheeler.github.io/slick/ -->
-        <script src="js/responsive.js"></script>                    <!-- Responsive functionality -->
-        <script>
+    </section>
 
-            /* Google map
-            ------------------------------------------------*/
-            var map = '';
-            var center;
-
-            function initialize() {
-                var mapOptions = {
-                    zoom: 13,
-                    center: new google.maps.LatLng(-23.013104,-43.394365),
-                    scrollwheel: false
-                };
-
-                map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
-
-                google.maps.event.addDomListener(map, 'idle', function() {
-                  calculateCenter();
-              });
-
-                google.maps.event.addDomListener(window, 'resize', function() {
-                  map.setCenter(center);
-              });
-            }
-
-            function calculateCenter() {
-                center = map.getCenter();
-            }
-
-            function loadGoogleMap(){
-                var script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVWt4rJfibfsEDvcuaChUaZRS5NXey1Cs&v=3.exp&sensor=false&' + 'callback=initialize';
-                document.body.appendChild(script);
-            } 
-
-            function setCarousel() {
-                
-                if ($('.tm-article-carousel').hasClass('slick-initialized')) {
-                    $('.tm-article-carousel').slick('destroy');
-                } 
-
-                if($(window).width() < 438){
-                    // Slick carousel
-                    $('.tm-article-carousel').slick({
-                        infinite: false,
-                        dots: true,
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    });
-                }
-                else {
-                 $('.tm-article-carousel').slick({
-                        infinite: false,
-                        dots: true,
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    });   
-                }
-            }
-
-            function setPageNav(){
-                if($(window).width() > 991) {
-                    $('#tm-top-bar').singlePageNav({
-                        currentClass:'active',
-                        offset: 79
-                    });   
-                }
-                else {
-                    $('#tm-top-bar').singlePageNav({
-                        currentClass:'active',
-                        offset: 65
-                    });   
-                }
-            }
-
-            function togglePlayPause() {
-                vid = $('.tmVideo').get(0);
-
-                if(vid.paused) {
-                    vid.play();
-                    $('.tm-btn-play').hide();
-                    $('.tm-btn-pause').show();
-                }
-                else {
-                    vid.pause();
-                    $('.tm-btn-play').show();
-                    $('.tm-btn-pause').hide();   
-                }  
-            }
-       
-            $(document).ready(function(){
-
-                $(window).on("scroll", function() {
-                    if($(window).scrollTop() > 100) {
-                        $(".tm-top-bar").addClass("active");
-                    } else {
-                        //remove the background property so it comes transparent again (defined in your css)
-                       $(".tm-top-bar").removeClass("active");
-                    }
-                });      
-
-                // Google Map
-                loadGoogleMap();  
-
-                // Date Picker
-                const pickerCheckIn = datepicker('#inputCheckIn');
-                const pickerCheckOut = datepicker('#inputCheckOut');
-                
-                // Slick carousel
-                setCarousel();
-                setPageNav();
-
-                $(window).resize(function() {
-                  setCarousel();
-                  setPageNav();
-                });
-
-                // Close navbar after clicked
-                $('.nav-link').click(function(){
-                    $('#mainNav').removeClass('show');
-                });
-
-                // Control video
-                $('.tm-btn-play').click(function() {
-                    togglePlayPause();                                      
-                });
-
-                $('.tm-btn-pause').click(function() {
-                    togglePlayPause();                                      
-                });
-
-                // Update the current year in copyright
-                $('.tm-current-year').text(new Date().getFullYear());                           
-            });
-
-        </script>             
+    <!-- ============================================================
+         FOOTER — injected from footer.html via main.js
+    ============================================================ -->
+    <div id="footer-mount"></div>
 
 </body>
 </html>
